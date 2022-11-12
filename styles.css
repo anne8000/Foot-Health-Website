@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+/* vw and vh are the width and height of the screen but % is realtive to the parent */
+
+html, body {
+    margin: 0px;
+    padding: 0px;
+    /* font-family: 'Montserrat'; */
+    font-size: 22px;
+}
+
+body {
+    background-image: url('https://www.zingerbug.com/Backgrounds/background_images/green_marble_seamless.jpg');
+    height: 100vh;
+}
+
+img {
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    height: 100%;
+}
+
+#img1 {
+    left: 0px;
+}
+
+#img2 {
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+#img3 {
+    right: 0px;
+    object-fit: cover;
+    max-width: 15%;
+}
+
+#top {
+    position: absolute;
+    width: 100vw;
+    height: 10vw;
+}
+
+#mid {
+    position: absolute;
+    margin-top: 15px;
+    width: 90vw;
+    /* max-width: 900px; */
+    margin-left: 5vw;
+    margin-right: 5vw;
+    top: 11vw;
+    text-align: center;
+    left: 45vw;
+    transform: translate(-50%, 0%);
+}
+
+#grid-container {
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    gap: 10px;
+}
+
+/* for troubleshooting */
+
+
+/* #grid-container div {
+    background-color: green;
+} */
+
+#BAFHP {
+    position: relative;
+    width: 50%;
+    height: auto;
+    top: 50%;
+    left: 10%;
+    transform: translate(0%, -50%);
+}
+
+#SMAE {
+    position: relative;
+    width: 70%;
+    height: auto;
+    top: 50%;
+    left: -10%;
+    transform: translate(0%, -50%);
+}
+
+ul {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    text-align: left;
+    transform: translate(-50%, -50%);
+}
+
+#title, #title-extension {
+    color: purple;
+}
+
+#title {
+    font-size: 25px;
+}
+
+#title-extension {
+    font-size: 18px;
+    padding-left: 8px;
+}
+
+#subtitle {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 15px;
+}
+
+#description {
+    font-size: 19px;
+    margin-bottom: 30px;
+}
+
+#qualified {
+    font-size: 19px;
+}
+
+#contact {
+    font-size: 32px;
+}
+
+#contact-info {
+    font-size: 32px;
+}
+
+#testimonials-title, #testimonials, #copywright {
+    text-align: left;
+}
+
+#testimonials-title {
+    font-size: 25px;
+    color: #18BBD8;
+}
+
+#testimonials {
+    font-size: 20px;
+    line-height: 40px;
+}
+
+#copywright {
+    font-size: 13px;
+}
+
+#contact-button {
+    background-color: #18B8D8;
+    border-radius: 7px;
+    border: none;
+    padding: 15px 50px;
+    color: white;
+    text-align: center;
+    font-size: 32px;
+    margin: 15px 10px;
+    cursor: pointer;
+    height: 100px;
+}
+
+#contact-button:active {
+    background-color: #1A92AA;
+}
+
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+#container {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    padding: 15px;
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+}
+
+form {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    padding: 2vw 4vw;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+form h3 {
+    color: #555;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+form input, form textarea {
+    border: 0;
+    margin: 10px 0;
+    padding: 20px;
+    outline: none;
+    background: #f5f5f5;
+    font-size: 16px;
+}
+
+form button {
+    padding: 15px;
+    background: #18B8D8;
+    color: white;
+    font-size: 18px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    width: 200px;
+    margin: 20px auto 0;
+    border-radius: 30px;
+}
+
+#close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    height: 30px;
+    width: 30px;
+    opacity: 0.3;
+}
+
+#close:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+#close::before, #close::after {
+    position: absolute;
+    left: 13px;
+    width: 2px;
+    height: 30px;
+    content: '';
+    background-color: #333;
+}
+
+#close::before {
+    transform: rotate(45deg);
+}   
+
+#close::after {
+    transform: rotate(-45deg);
+}
+
+/* so above I made a square clear box in the top right of the form which is the close div
+I then did close::before and close::after and so close::before just creates a pseudoelement inside the
+close div a pseduoelement is basically just another element but its pseudo because its not really a real element
+So i made a pseudo element inside of the close element because I didn close::before and the before just means the pseudoelement
+created will be at the start of the close div so lets say the close div had text then the pseduoelement close::before
+would be before the start of the text and close::after would be after the text. So two pseduoelements are created;
+close::before and close::after and they both are just long thin rectangles which are pretty much black and have opacity 0.3
+I also position them in the center and then rotate the ::before one 45 deg and the ::after one -45 deg so they make a cross.

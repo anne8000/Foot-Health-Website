@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="top">
+        <img src="./images/feet_crossed.jpg" id="img1">
+        <img src="./images/standing.gif" id="img2">
+        <img src="./images/walking.gif" id="img3">
+    </div>
+    <div id="mid">
+        <span id="title">
+            Anne Hickmott
+        </span>
+        <!-- these are span elements cause it means they will be on
+        the same line cause span elements dont cause a line break-->
+        <span id="title-extension">
+            Dip.FH MCFHP MAFHP
+        </span>
+        <div id="subtitle">
+            Member of the British Association of Foot Health Professionals
+        </div>
+        <br>
+        <div id="description">
+            As a Foot Health Professional I can help care for the most common foot conditions including:
+            <div id="grid-container">
+                <div>
+                    <img src="./images/BAFHP.jpg" id="BAFHP" alt="">
+                </div>
+                <div>
+                    <ul>
+                        <li>Corns and Callus</li>
+                        <li>Ingrowing Toenails</li>
+                        <li>Cracked Heels/Dry Skin</li>
+                        <li>Diabetic Feet</li>
+                        <li>Nail Trimming</li>
+                        <li>Thick Nail Reduction</li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="./images/smae.png" id="SMAE" alt="">
+                </div>
+            </div>
+        </div>
+        <div id="qualified">
+            Fully qualified, insured and experienced domiciliary Foot Health Professional working in Wantage, Grove and surrounding villages in Oxfordshire.
+        </div>
+        <div id="contact">
+            For free advice or an appointment in your home contact Anne:
+        </div>
+        <button id="contact-button">Contact</button>
+        <div id="contact-info">
+            Tel: 07853 277 750 <br>
+            email: foothealthwantage@mail.com
+        </div>
+        <br>
+        <div id="testimonials-title">
+            Testimonials
+        </div>
+        <hr>
+        <div id="testimonials">
+            "Thank you so much for all your help with mum over the last few years. I'm not sure what we would have done without you." G.S <br>
+            "You make a huge difference to my life and I always look forward to your visits." G.K <br>
+            "I feel like I'm walking on air after your visits, thank you!" P.H
+        </div>
+        <br>
+        <hr>
+        <div id="copywright">
+            © 2021 by Anne Hickmott
+        </div>
+        <br>
+        <hr>
+    </div>
+    <div id="overlay">
+        <div id="container">
+            <form action="https://formspree.io/f/xbjbpqkb" method="POST">
+                <h3>GET IN TOUCH</h3>
+                <input type="text" name="Name" id="name" placeholder="Your Name" required>
+                <input type="email" name="Email" id="email" placeholder="Email" required>
+                <input type="text" name="phone" id="phone" placeholder="Phone no. (optional)">
+                <textarea id="message" name="Message" rows="4" placeholder="Message"></textarea>
+                <button type="submit">Send</button>
+            </form>
+            <div id="close">
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./script.js"></script>
+</html>
