@@ -32,42 +32,62 @@ img{max-width:100%;display:block;}a{text-decoration:none;color:inherit;}
 .credentials {
     background: var(--light);
     padding: 3rem 1rem;
-    text-align: center;
 }
 
-.credentials-text {
-    font-size: 1.25rem;
-    color: var(--dark-text);
-    margin-bottom: 2rem;
-}
-
-.certificates {
+.credentials-content {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
-    align-items: center;    /* vertical centering within the row */
-    gap: 1.5rem;
+    gap: 2rem;
+    text-align: center;   /* fallback when wrapping */
 }
 
+.credentials-title {
+    font-size: 1.5rem;
+    color: var(--dark-text);
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.2;
+}  
+
+/* Keep the text from stretching too wide */
+.credentials-text {
+    flex: 1 1 300px;      /* will grow/shrink, but not below 300px */
+    font-size: 1.25rem;
+    color: var(--accent);
+    margin: 0;
+    margin-top: 1rem;
+}
+
+/* Certificate images stay the same height, auto width */
 .certificate-img {
-    box-sizing: border-box;    /* include padding in the declared height */
-    height: 220px;             /* total height, including padding */
-    width: auto;               /* preserve aspect ratio */
-    padding: 10px;             /* inner whitespace around the graphic */
-    background: #fff;          /* white “mat” behind the certificate */
-    object-fit: contain;       /* ensure no cropping */
+    box-sizing: border-box;
+    height: 220px;
+    width: auto;
+    padding: 10px;
+    background: #fff;
+    object-fit: contain;
     border: 2px solid var(--accent);
     border-radius: 0.5rem;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
-  
-@media (max-width: 600px) {
-    .certificate-img {
-      height: 150px;           /* same formula on mobile */
-      padding: 6px;            /* scale padding down if you like */
+
+@media (max-width: 800px) {
+    .credentials-content {
+    flex-direction: column;
     }
-}
-  
+    
+    .certificate-img {
+    height: 150px;
+    padding: 6px;
+    }
+    
+    .credentials-text {
+    flex: none;
+    margin: 1rem 0;
+    }
+}  
 
 /* Main Contact Button under Techniques */
 .contact-main {
@@ -147,12 +167,23 @@ img{max-width:100%;display:block;}a{text-decoration:none;color:inherit;}
   
 
 /* Hero */
-.hero{position:relative;height:80vh;background:url('https://www.example.com/images/foot-care-bg.jpg') center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;}
+.hero{position:relative;height:90vh;background:url('https://www.example.com/images/foot-care-bg.jpg') center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;}
 .hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background-image: url("./assets/header_background.png")}
 .hero-content{position:relative;z-index:1;max-width:600px;padding:1rem;animation:fadeInSlide .8s ease-out;}
 .hero-content h1{font-size:3rem;color:#EFF9F0;margin-bottom:.5rem;}
 .hero-content p{font-size:1.25rem;color:#EFF9F0;margin-bottom:1rem;}
-.hero-wave{position:absolute;bottom:0;left:0;width:100%;height:auto;}
+.hero-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    /* Remove any hard-coded height if you have one */
+    height: auto;
+  
+    /* Scale the wave vertically to 80% of its original height */
+    transform: scaleY(0.8);
+    transform-origin: bottom;
+}
 @keyframes fadeInSlide{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);} }
 
 /* About */
@@ -237,6 +268,15 @@ footer{background:#efefef;color:#333;text-align:center;padding:1rem;font-size:.9
     font-size: 1rem;
     color: var(--accent);
     font-weight: 600;
+    margin: 0;
+    line-height: 1.4;
+}  
+
+.booking-warning .demand-line {
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 400;
     margin: 0;
     line-height: 1.4;
 }  
