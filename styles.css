@@ -27,7 +27,47 @@ img{max-width:100%;display:block;}a{text-decoration:none;color:inherit;}
 .btn:focus {
   outline:none;
 }
-.btn-hero { background:var(--secondary); }
+
+/* Credentials Section */
+.credentials {
+    background: var(--light);
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.credentials-text {
+    font-size: 1.25rem;
+    color: var(--dark-text);
+    margin-bottom: 2rem;
+}
+
+.certificates {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;    /* vertical centering within the row */
+    gap: 1.5rem;
+}
+
+.certificate-img {
+    box-sizing: border-box;    /* include padding in the declared height */
+    height: 220px;             /* total height, including padding */
+    width: auto;               /* preserve aspect ratio */
+    padding: 10px;             /* inner whitespace around the graphic */
+    background: #fff;          /* white “mat” behind the certificate */
+    object-fit: contain;       /* ensure no cropping */
+    border: 2px solid var(--accent);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+  
+@media (max-width: 600px) {
+    .certificate-img {
+      height: 150px;           /* same formula on mobile */
+      padding: 6px;            /* scale padding down if you like */
+    }
+}
+  
 
 /* Main Contact Button under Techniques */
 .contact-main {
@@ -60,6 +100,15 @@ img{max-width:100%;display:block;}a{text-decoration:none;color:inherit;}
     display: block;            /* ensures the button takes its own line */
     margin: 0 auto;            /* center if you like, or remove for left align */
 }
+
+.contact-tagline {
+    text-align: center;
+    font-size: 1rem;
+    color: #555;              /* subtle secondary text */
+    margin-bottom: 0.75rem;   /* space before button */
+    line-height: 1.4;
+    font-style: italic;       /* optional, for a friendly tone */
+}  
   
 .contact-info {
     margin-top: 0.75rem;       /* space between button and text */
@@ -82,9 +131,24 @@ img{max-width:100%;display:block;}a{text-decoration:none;color:inherit;}
     text-decoration: underline;
 }  
 
+.contact-phone {
+    display: inline-block;      /* so margin/padding can apply if you like */
+    font-size: 1.2rem;          /* increase as needed */
+    font-weight: 600;           /* optional: make it stand out more */
+    color: var(--text-primary); /* ensure it contrasts well */
+    margin-left: 0.25rem;       /* small gap after “Call:” label */
+}
+  
+@media (min-width: 768px) {
+    .contact-phone {
+      font-size: 1.4rem;        /* slightly larger on desktop */
+    }
+}
+  
+
 /* Hero */
 .hero{position:relative;height:80vh;background:url('https://www.example.com/images/foot-care-bg.jpg') center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;}
-.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background-image: url("./images/header_background.png")}
+.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background-image: url("./assets/header_background.png")}
 .hero-content{position:relative;z-index:1;max-width:600px;padding:1rem;animation:fadeInSlide .8s ease-out;}
 .hero-content h1{font-size:3rem;color:#EFF9F0;margin-bottom:.5rem;}
 .hero-content p{font-size:1.25rem;color:#EFF9F0;margin-bottom:1rem;}

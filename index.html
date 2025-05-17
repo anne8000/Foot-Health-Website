@@ -5,8 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- … other head tags … -->
     <meta name="keywords"
-        content="podiatry, podiatrist, foot health, chiropody, chiropodist, corns callus, ingrowing toenails, cracked heels, diabetic foot care, Wantage, Grove, Oxfordshire" />
+        content="podiatry, podiatrist, foot health, chiropody, chiropodist, corns callus, ingrowing toenails, cracked heels, diabetic foot care, Wantage, Grove" />
+    <meta name="description"
+        content="Fully qualified, insured and experienced domicillary Foot Health Professional.">
+  
     <title>Foot Health by Anne Hickmott</title>
+      <!-- Standard favicon -->
+    <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.ico">
+
+    <!-- PNG fallback / higher-res -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png">
+
+    <!-- iOS home-screen -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon.png">
+
     <link rel="stylesheet" href="styles.css">
 
     <!-- 1. JSON-LD structured data -->
@@ -15,7 +27,7 @@
         "@context": "https://schema.org",
         "@type": "MedicalBusiness",
         "name": "Your Podiatry Practice",
-        "description": "Foot health professional in Wantage, Grove & Oxfordshire",
+        "description": "Foot health professional in Wantage, Grove",
         "keywords": [
             "podiatry",
             "foot health",
@@ -46,48 +58,91 @@
     <div class="hero-content">
       <h1>Your Local Foot Health Professional</h1>
       <p class="subtitle">
-        Foot care services in Wantage, Grove &amp; surrounding Oxfordshire villages
+        Fully qualified, insured and experienced domicillary Foot Health Professional.
       </p>
-      <a href="#about" class="btn btn-hero">Learn More</a>
     </div>
     <svg class="hero-wave" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,224L60,192C120,160,240,96,360,106.7C480,117,600,203,720,234.7C840,267,960,245,1080,224C1200,203,1320,181,1380,170.7L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
   </header>
 
   <main>
+    <!-- CREDENTIALS -->
+    <section class="credentials">
+        <div class="credentials-content">
+        <p class="credentials-text">
+            <strong>Member of the British Association of Foot Health Professionals</strong>
+        </p>
+        <div class="certificates">
+            <img
+            src="./assets/BAFHP_Certificate.webp"
+            alt="BASFP Membership Certificate 1"
+            class="certificate-img"
+            >
+            <img
+            src="./assets/SMAE_Certificate.jpg"
+            alt="BASFP Membership Certificate 2"
+            class="certificate-img"
+            >
+        </div>
+        </div>
+    </section>
+    
     <!-- ABOUT -->
     <section id="about" class="about">
       <h2>How I Can Help Your Feet</h2>
       <div class="techniques-grid">
 
         <div class="card">
-          <img src="./images/corns_and_callus.png" alt="Corns and Callus Icon">
+          <img src="./assets/corns_and_callus.png" alt="Corns and callus removal foot care icon – foot health in Wantage and Grove">
           <h3>Corns &amp; Callus</h3>
           <p>Expert removal of hard skin and corns for smooth, pain-free feet.</p>
         </div>
 
         <div class="card">
-          <img src="./images/ingrowing_toenails.png" alt="Ingrowing Toenails Icon">
+          <img src="./assets/ingrowing_toenails.png" alt="Ingrowing toenail treatment icon – domiciliary foot health services">
           <h3>Ingrowing Toenails</h3>
           <p>Safe, precise treatment to alleviate pain and prevent infection.</p>
         </div>
 
         <div class="card">
-          <img src="./images/cracked_heels.png" alt="Cracked Heels Icon">
+          <img src="./assets/cracked_heels.png" alt="Cracked heels and dry skin foot treatment icon – podiatry care">
           <h3>Cracked Heels / Dry Skin</h3>
           <p>Deep hydration and gentle debridement for healthy, soft heels.</p>
         </div>
+
+        <div class="card">
+            <img src="./assets/diabetic_feet.png" alt="Diabetic foot care icon – specialist foot health professional">
+            <h3>Diabetic Feet</h3>
+            <p>Specialised care to protect sensitive diabetic skin and reduce risk of complications.</p>
+          </div>
+          
+          <div class="card">
+            <img src="./assets/nail_trimming.png" alt="Precision toenail trimming icon – mobile podiatry services">
+            <h3>Nail Trimming</h3>
+            <p>Precision trimming and shaping for healthy, well-groomed nails.</p>
+          </div>
+          
+          <div class="card">
+            <img src="./assets/thick_nail_reduction.png" alt="Thick nail reduction icon – foot health and nail care">
+            <h3>Thick Nail Reduction</h3>
+            <p>Comfortable thinning of overgrown nails to relieve pressure and improve appearance.</p>
+          </div>          
 
       </div>
 
 
       <div class="contact-wrapper">
         <!-- CONTACT BUTTON BELOW TECHNIQUES -->
+        <p class="contact-tagline">
+            for free advice or an appointment in your home, contact Anne:
+        </p>
         <button id="contact-button" class="btn contact-main">Contact</button>        
         <div class="contact-info">
-          <p class="contact-text">
-            <strong>Call:</strong> <a href="tel:+441234567890">07853 277 750</a><br>
-            <strong>Email:</strong> <a href="mailto:you@example.com">foothealthwantage@mail.com</a>
-          </p>
+            <p class="contact-text">
+                <strong>Call:</strong>
+                <span class="contact-phone">01234 567 890</span><br>
+                <strong>Email:</strong>
+                <a href="mailto:you@example.com">you@example.com</a>
+            </p>
         </div>
       </div>
       
