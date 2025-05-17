@@ -1,58 +1,40 @@
-var topBox = document.getElementById("top");
-var img1 = document.getElementById("img1");
-var img2 = document.getElementById("img2");
-var img3 = document.getElementById("img3");
+const contactBtn = document.querySelector('#contact-button');
+const modal = document.querySelector('#contactModal');
+const closeBtn = document.querySelector('.modal .close');
 
-var cover = false;
-
-function sortTop() {
-    offset = img2.width/2;
-    img1.style.left = `${window.innerWidth/2 - img1.width - offset}px`;
-    img3.style.left = `${window.innerWidth/2 + offset}px`;
-}
-window.addEventListener("resize", sortTop);
-
-var delay = 0.1;
-setTimeout(sortTop, delay * 1000);
-// The first time the page loads the images need to load in first before sortTop can be called otherwise the
-// top will get sorted incorrecetly so this function 'setTimeout' will wait 0.3s before sorting the top of the screen
-
-var btn = document.getElementById("contact-button");
-btn.onclick = function() {
-    if (cover == true) {
-        off();
-    }
-    else if (cover == false) {
-        on();
-    }
+function openModal() {
+  // add the visible class to fade in
+  modal.classList.add('visible');
 }
 
-var overlay = document.getElementById("overlay");
-
-function on() {
-    overlay.style.display = "block";
-    cover = true;
+function closeModal() {
+  // remove it to fade out, then wait and hide
+  modal.classList.remove('visible');
+  // optional: if you used display:none on remove, you may need to wait for the opacity transition
+  setTimeout(() => {
+    modal.style.display = 'none';
+  }, 300);
 }
 
-function off() {
-    overlay.style.display = "none";
-    cover = false;
-}
+// hook up your handlers
+contactBtn.addEventListener('click', () => {
+  // ensure display flex first so transition can occur
+  modal.style.display = 'flex';
+  // slight delay so the browser registers the display change before opacity transition
+  requestAnimationFrame(openModal);
+});
 
-var popup = document.getElementById("container");
+closeBtn.addEventListener('click', closeModal);
+modal.addEventListener('click', e => {
+  if (e.target === modal) closeModal();
+});
 
-window.onclick = function(event) {
-    /// Here we say that if the element we clicked is not either the button, the popup element or a child of the popup element
-    /// then we will remove the popup because the user could click on an element inside the popup and this element would
-    /// not be the popup but we also have to make sure they dont click the button because if they click the button then
-    /// the popup cant be opened but by clicking the button it will open and so then this function will run and instantly close it
-    /// because the program thinks that we clicked a button (so not the popup)
-    if ((event.target != popup)&&(event.target != btn)&&(!popup.contains(event.target))) {
-        off();
-    }
-}
 
-var close_button = document.getElementById("close");
-close_button.onclick = function() {
-    off();
-}
+// Scroll reveal
+const faders = document.querySelectorAll('.fade-in');
+const observer = new IntersectionObserver((entries, obs) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) { entry.target.classList.add('visible'); obs.unobserve(entry.target); }
+  });
+}, { threshold: 0.2 });
+faders.forEach(fader => observer.observe(fader));

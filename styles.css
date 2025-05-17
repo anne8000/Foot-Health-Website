@@ -1,272 +1,166 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+/* Reset & Base */
+*{margin:0;padding:0;box-sizing:border-box;}html{font-size:16px;}body{font-family:'Poppins',sans-serif;background:#f4f6f8;color:#333;line-height:1.6;}
+img{max-width:100%;display:block;}a{text-decoration:none;color:inherit;}
 
-/* vw and vh are the width and height of the screen but % is realtive to the parent */
+/* Color Palette */
+:root{--primary:#00A896;--secondary:#02C39A;--accent:#05668D;--light:#EFF9F0;--dark-text:#112D4E;--btn-shadow:rgba(0,0,0,0.15);}
 
-html, body {
-    margin: 0px;
-    padding: 0px;
-    /* font-family: 'Montserrat'; */
-    font-size: 22px;
+/* Utility Buttons */
+.btn {
+  display:inline-block;
+  padding:.75rem 1.5rem;
+  font-size:1rem;
+  font-weight:600;
+  background:var(--primary);
+  color:#fff;
+  border:none;
+  border-radius:2rem;
+  box-shadow:0 4px 12px var(--btn-shadow);
+  cursor:pointer;
+  transition:transform .2s,box-shadow .2s;
+  outline:none;
 }
-
-body {
-    background-image: url('https://www.zingerbug.com/Backgrounds/background_images/green_marble_seamless.jpg');
-    height: 100vh;
+.btn:hover {
+  transform:translateY(-2px);
+  box-shadow:0 6px 18px var(--btn-shadow);
 }
-
-img {
-    margin: 0px;
-    padding: 0px;
-    position: absolute;
-    height: 100%;
+.btn:focus {
+  outline:none;
 }
+.btn-hero { background:var(--secondary); }
 
-#img1 {
-    left: 0px;
+/* Main Contact Button under Techniques */
+.contact-main {
+  margin:2rem auto 0;
+  display:block;
+  width:240px;
+  height:60px;
+  font-size:1.35rem;
+  letter-spacing:.5px;
+  background:var(--accent);
+  border:none;
+  border-radius:1.5rem;
+  box-shadow:0 4px 12px var(--btn-shadow);
+  color:#fff;
+  transition:transform .2s,box-shadow .2s;
 }
-
-#img2 {
-    left: 50%;
-    transform: translate(-50%, 0%);
+.contact-main:hover {
+  transform:translateY(-3px);
+  box-shadow:0 8px 24px var(--btn-shadow);
 }
+.contact-main:focus { outline:none; }
 
-#img3 {
-    right: 0px;
-    object-fit: cover;
-    max-width: 15%;
+.contact-wrapper {
+    display: inline-block;     /* or use flex with column */
+    text-align: left;          /* keeps info left-aligned under the button */
+    margin-top: 1.5rem;        /* adjust spacing as needed */
 }
-
-#top {
-    position: absolute;
-    width: 100vw;
-    height: 10vw;
+  
+.contact-wrapper .btn {
+    display: block;            /* ensures the button takes its own line */
+    margin: 0 auto;            /* center if you like, or remove for left align */
 }
-
-#mid {
-    position: absolute;
-    margin-top: 15px;
-    width: 90vw;
-    /* max-width: 900px; */
-    margin-left: 5vw;
-    margin-right: 5vw;
-    top: 11vw;
+  
+.contact-info {
+    margin-top: 0.75rem;       /* space between button and text */
+}
+  
+.contact-text {
+    padding-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.3;
     text-align: center;
-    left: 45vw;
-    transform: translate(-50%, 0%);
 }
-
-#grid-container {
-    display: grid;
-    grid-template-columns: 30% 40% 30%;
-    gap: 10px;
+  
+.contact-text a {
+    color: var(--accent);
+    text-decoration: none;
 }
+  
+.contact-text a:hover {
+    text-decoration: underline;
+}  
 
-/* for troubleshooting */
+/* Hero */
+.hero{position:relative;height:80vh;background:url('https://www.example.com/images/foot-care-bg.jpg') center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;}
+.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background-image: url("./images/header_background.png")}
+.hero-content{position:relative;z-index:1;max-width:600px;padding:1rem;animation:fadeInSlide .8s ease-out;}
+.hero-content h1{font-size:3rem;color:#EFF9F0;margin-bottom:.5rem;}
+.hero-content p{font-size:1.25rem;color:#EFF9F0;margin-bottom:1rem;}
+.hero-wave{position:absolute;bottom:0;left:0;width:100%;height:auto;}
+@keyframes fadeInSlide{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);} }
 
+/* About */
+.about{background:var(--light);padding:4rem 1rem;text-align:center;}
+.about h2{font-size:2.5rem;color:var(--dark-text);margin-bottom:2rem;}
+.techniques-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem;max-width:1000px;margin:0 auto;}
+.card{background:#fff;border-radius:1rem;padding:2rem;box-shadow:0 6px 18px rgba(0,0,0,0.1);transition:transform .3s,box-shadow .3s;}
+.card:hover{transform:translateY(-8px);box-shadow:0 12px 24px rgba(0,0,0,0.15);}
+.card img{width:100px;margin:0 auto 1rem;}
+.card h3{font-size:1.25rem;color:var(--accent);margin-bottom:.5rem;}
+.card p{font-size:1rem;color:#555;}
 
-/* #grid-container div {
-    background-color: green;
-} */
+/* Testimonials */
+section.testimonials{padding:4rem 1rem;background:#fff;}
+section.testimonials h2{font-size:2rem;color:var(--dark-text);text-align:center;margin-bottom:1.5rem;}
+section.testimonials blockquote{border-left:4px solid var(--primary);padding-left:1rem;margin:1rem auto;max-width:800px;color:#444;}
+section.testimonials cite{display:block;text-align:right;margin-top:.5rem;color:#555;}
 
-#BAFHP {
-    position: relative;
-    width: 50%;
-    height: auto;
-    top: 50%;
-    left: 10%;
-    transform: translate(0%, -50%);
-}
+/* Footer */
+footer{background:#efefef;color:#333;text-align:center;padding:1rem;font-size:.9rem;}
 
-#SMAE {
-    position: relative;
-    width: 70%;
-    height: auto;
-    top: 50%;
-    left: -10%;
-    transform: translate(0%, -50%);
-}
-
-ul {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    width: 60%;
-    text-align: left;
-    transform: translate(-50%, -50%);
-}
-
-#title, #title-extension {
-    color: purple;
-}
-
-#title {
-    font-size: 25px;
-}
-
-#title-extension {
-    font-size: 18px;
-    padding-left: 8px;
-}
-
-#subtitle {
-    font-weight: bold;
-    font-style: italic;
-    font-size: 15px;
-}
-
-#description {
-    font-size: 19px;
-    margin-bottom: 30px;
-}
-
-#qualified {
-    font-size: 19px;
-}
-
-#contact {
-    font-size: 32px;
-}
-
-#contact-info {
-    font-size: 32px;
-}
-
-#testimonials-title, #testimonials, #copywright {
-    text-align: left;
-}
-
-#testimonials-title {
-    font-size: 25px;
-    color: #18BBD8;
-}
-
-#testimonials {
-    font-size: 20px;
-    line-height: 40px;
-}
-
-#copywright {
-    font-size: 13px;
-}
-
-#contact-button {
-    background-color: #18B8D8;
-    border-radius: 7px;
-    border: none;
-    padding: 15px 50px;
-    color: white;
-    text-align: center;
-    font-size: 32px;
-    margin: 15px 10px;
-    cursor: pointer;
-    height: 100px;
-}
-
-#contact-button:active {
-    background-color: #1A92AA;
-}
-
-#overlay {
+/* Modal */
+/* Base modal styles */
+.modal {
+    display: none;        /* hidden by default */
     position: fixed;
-    display: none;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 2;
-}
-
-#container {
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    padding: 15px;
-    border-radius: 10px;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    display: flex;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
     align-items: center;
     justify-content: center;
-    width: 500px;
+  
+    /* prepare for fade */
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-form {
-    background: white;
-    display: flex;
-    flex-direction: column;
-    padding: 2vw 4vw;
-    width: 90%;
-    max-width: 600px;
-    border-radius: 10px;
-}
-
-form h3 {
-    color: #555;
-    font-weight: 800;
-    margin-bottom: 20px;
-}
-
-form input, form textarea {
-    border: 0;
-    margin: 10px 0;
-    padding: 20px;
-    outline: none;
-    background: #f5f5f5;
-    font-size: 16px;
-}
-
-form button {
-    padding: 15px;
-    background: #18B8D8;
-    color: white;
-    font-size: 18px;
-    border: 0;
-    outline: none;
-    cursor: pointer;
-    width: 200px;
-    margin: 20px auto 0;
-    border-radius: 30px;
-}
-
-#close {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    height: 30px;
-    width: 30px;
-    opacity: 0.3;
-}
-
-#close:hover {
+/* When you want it visible */
+.modal.visible {
+    display: flex;        /* or block, depending on your layout */
     opacity: 1;
-    cursor: pointer;
 }
-
-#close::before, #close::after {
-    position: absolute;
-    left: 13px;
-    width: 2px;
-    height: 30px;
-    content: '';
-    background-color: #333;
+.modal.hidden{display:none;}
+.modal-content{background:#fff;padding:2rem;border-radius:0.5rem;max-width:500px;width:90%;position:relative;}
+.modal-content .close{position:absolute;top:1rem;right:1rem;font-size:1.5rem;cursor:pointer;}
+.modal-content form{display:flex;flex-direction:column;}
+.modal-content input,
+.modal-content textarea{
+  margin:0.5rem 0;
+  padding:0.75rem;
+  border:1px solid #ccc;
+  border-radius:0.25rem;
+  font-size:1rem;
 }
-
-#close::before {
-    transform: rotate(45deg);
-}   
-
-#close::after {
-    transform: rotate(-45deg);
+.modal-content button {
+  margin-top:1rem;
+  padding:.75rem 1.5rem;
+  font-size:1rem;
+  background:var(--secondary);
+  color:#fff;
+  border:none;
+  border-radius:1.5rem;
+  box-shadow:0 4px 12px var(--btn-shadow);
+  cursor:pointer;
+  transition:transform .2s,box-shadow .2s;
 }
+.modal-content button:hover {
+  transform:translateY(-2px);
+  box-shadow:0 6px 18px var(--btn-shadow);
+}
+.modal-content button:focus { outline:none; }
 
-/* so above I made a square clear box in the top right of the form which is the close div
-I then did close::before and close::after and so close::before just creates a pseudoelement inside the
-close div a pseduoelement is basically just another element but its pseudo because its not really a real element
-So i made a pseudo element inside of the close element because I didn close::before and the before just means the pseudoelement
-created will be at the start of the close div so lets say the close div had text then the pseduoelement close::before
-would be before the start of the text and close::after would be after the text. So two pseduoelements are created;
-close::before and close::after and they both are just long thin rectangles which are pretty much black and have opacity 0.3
-I also position them in the center and then rotate the ::before one 45 deg and the ::after one -45 deg so they make a cross.
+/* Fade-in */
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s;}
+.fade-in.visible{opacity:1;transform:translateY(0);}  
