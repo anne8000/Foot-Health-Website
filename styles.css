@@ -336,3 +336,179 @@ footer{background:#efefef;color:#333;text-align:center;padding:1rem;font-size:.9
 /* Fade-in */
 .fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s;}
 .fade-in.visible{opacity:1;transform:translateY(0);}  
+
+/* PRICES PAGE & NAVBAR */
+/* --- Modern & Sleek Navigation Bar --- */
+.navbar {
+    /* Frosted glass effect */
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); 
+    
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    position: sticky;
+    top: 0;
+    z-index: 1100;
+    transition: background 0.3s ease;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.25rem 2rem;
+}
+
+/* Navbar options on the left */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #555;
+    position: relative;
+    padding: 0.4rem 0;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+/* Sleek modern underline animation */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary);
+    transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.nav-links a:hover {
+    color: var(--dark-text);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Name / Logo stylized on the right */
+.nav-logo {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--dark-text);
+    text-transform: uppercase;
+    letter-spacing: 2px; /* High-end luxury brand tracking */
+    transition: opacity 0.3s ease;
+}
+
+.nav-logo:hover {
+    opacity: 0.7;
+}
+
+/* Smart stacking behavior for mobile viewports */
+@media (max-width: 600px) {
+    .nav-container {
+        flex-direction: column-reverse; /* Keeps links accessible on top when stacked */
+        gap: 1rem;
+        padding: 1.25rem 1rem;
+    }
+    
+    .nav-links {
+        gap: 1.75rem;
+    }
+}
+
+
+/* --- Prices Section --- */
+.prices {
+    background: #fff;
+    padding: 5rem 1rem;
+    text-align: center;
+}
+
+.prices h2 {
+    font-size: 2.5rem;
+    color: var(--dark-text);
+    margin-bottom: 2.5rem;
+}
+
+.prices-container {
+    max-width: 850px;
+    margin: 0 auto;
+    background: var(--light);
+    border-radius: 1rem;
+    padding: 2.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.prices-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.prices-table th, 
+.prices-table td {
+    padding: 1.25rem 1rem;
+    border-bottom: 1px solid rgba(0, A8, 96, 0.15);
+}
+
+.prices-table th {
+    font-size: 1.1rem;
+    color: var(--accent);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.prices-table td strong {
+    display: block;
+    font-size: 1.15rem;
+    color: var(--dark-text);
+    margin-bottom: 0.35rem;
+}
+
+.prices-table td p {
+    font-size: 0.95rem;
+    color: #666;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.prices-table .price {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-align: right;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+/* Responsive adjustments for smaller screen sizes */
+@media (max-width: 600px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 1rem;
+    }
+    
+    .prices-container {
+        padding: 1.25rem;
+    }
+    
+    .prices-table th, 
+    .prices-table td {
+        padding: 1rem 0.5rem;
+    }
+    
+    .prices-table .price {
+        font-size: 1.3rem;
+    }
+}
