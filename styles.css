@@ -224,7 +224,7 @@ img{max-width:100%;display:block;}a{text-decoration:none;color:inherit;}
 
 /* Hero */
 .hero{position:relative;height:90vh;background:url('https://www.example.com/images/foot-care-bg.jpg') center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;}
-.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background-image: url("./assets/header_background.png")}
+.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background-image: url("./assets/header_background.png");background-position:center;background-size:cover;background-repeat:no-repeat;}
 .hero-content{position:relative;z-index:1;max-width:600px;padding:1rem;animation:fadeInSlide .8s ease-out;}
 .hero-content h1{font-size:3rem;color:#EFF9F0;margin-bottom:.5rem;}
 .hero-content p{font-size:1.25rem;color:#EFF9F0;margin-bottom:1rem;}
